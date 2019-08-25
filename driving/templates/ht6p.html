@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body background="https://source.unsplash.com/random"></body>
+<body style="margin:100;padding:0">
+<h1> let's drive </h1>
+
+<div class="boxed">
+<h3> license id </h3>
+<form action="/addLicense/" method="post">{% csrf_token %}
+	<input type="text" name="content"/>
+	<input type="submit" value="Add"/>
+</form>
+
+<h3> first name</h3>
+<form action="/addFname/" method="post">{% csrf_token %}
+	<input type="text" name="content"/>
+	<input type="submit" value="Add"/>
+</form>
+
+<h3> last name </h3>
+<form action="/addLname/" method="post">{% csrf_token %}
+	<input type="text" name="content"/>
+	<input type="submit" value="Add"/>
+</form>
+</div>
+</body>
+
+<a class="button" href="/trip/"> START DRIVING </a>
+</html>

@@ -1,0 +1,38 @@
+<body style="margin:100;padding:0"> 
+
+<h1> driver mode </h1>
+
+<ul>
+	{% for x in all_speed %}
+	<li> {{x.speed}} </li>
+	{% endfor %}
+</ul>
+
+
+<form action="/newspeed/" method="post">{% csrf_token %}
+	<input type="number" name="speed"/>
+	<input type="submit" value="CHANGE SPEED "/>
+</form>
+
+<form action="/chstate/" method="post">{% csrf_token %}
+	<input type="submit" value="ON HIGHWAY"/>
+</form>
+
+<form action="/ccstate/" method="post">{% csrf_token %}
+	<input type="submit" value="ON CITY"/>
+</form>
+
+
+
+<form action="/startbutton/" method="post">{% csrf_token %}
+	<input type="submit" value="START TRIP"/>
+</form>
+
+<form action="/stopbutton/" method="post">{% csrf_token %}
+	<input type="submit" value="STOP TRIP"/>
+</form>
+
+<a class="btn btn-primary" href="/summary/"> Finish Driving </a>
+
+
+</body>
